@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IRONFORGE GYM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">IRON<span>FORGE</span></div>
+  <ul>
+    <!-- SCHEDULE dropdown -->
+    <li class="nav-drop-wrap">
+      <a href="#schedule">Schedule</a>
+      <div class="nav-mega mega-schedule">
+        <div class="mega-title">Today's Classes — <span id="nav-today-label"></span></div>
+        <div class="mega-class-list" id="nav-classes"></div>
+        <a href="#schedule" class="mega-view-all">View Full Weekly Schedule →</a>
+      </div>
+    </li>
+
+    <!-- TRAINERS dropdown -->
+    <li class="nav-drop-wrap">
+      <a href="#trainers">Trainers</a>
+      <div class="nav-mega mega-trainers">
+        <div class="mega-title">Meet Our Coaches</div>
+        <div class="mega-trainer-grid">
+          <a href="#trainers" class="mega-trainer-card" style="text-decoration:none">
+            <div class="mega-trainer-avatar"><img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=100&q=80" alt="RK"></div>
+            <div class="mega-trainer-info">
+              <div class="mega-trainer-name">Rajan Kumar</div>
+              <div class="mega-trainer-spec">Strength & Powerlifting</div>
+              <div class="mega-trainer-stat">8 yrs · 340+ clients · 4.9★</div>
+            </div>
+          </a>
+          <a href="#trainers" class="mega-trainer-card" style="text-decoration:none">
+            <div class="mega-trainer-avatar"><img src="https://images.unsplash.com/photo-1609899537878-88d5ba429bdb?w=100&q=80" alt="PV"></div>
+            <div class="mega-trainer-info">
+              <div class="mega-trainer-name">Priya Venkat</div>
+              <div class="mega-trainer-spec">HIIT & Functional Fitness</div>
+              <div class="mega-trainer-stat">6 yrs · 280+ clients · 4.8★</div>
+            </div>
+          </a>
+          <a href="#trainers" class="mega-trainer-card" style="text-decoration:none">
+            <div class="mega-trainer-avatar"><img src="https://images.unsplash.com/photo-1583473848882-f9a5bc7fd2ee?w=100&q=80" alt="AS"></div>
+            <div class="mega-trainer-info">
+              <div class="mega-trainer-name">Arjun Sharma</div>
+              <div class="mega-trainer-spec">Boxing & Combat Sports</div>
+              <div class="mega-trainer-stat">10 yrs · 190+ clients · 4.9★</div>
+            </div>
+          </a>
+          <a href="#trainers" class="mega-trainer-card" style="text-decoration:none">
+            <div class="mega-trainer-avatar"><img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=100&q=80" alt="MN"></div>
+            <div class="mega-trainer-info">
+              <div class="mega-trainer-name">Meera Nair</div>
+              <div class="mega-trainer-spec">Yoga & Pilates</div>
+              <div class="mega-trainer-stat">7 yrs · 420+ clients · 5.0★</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </li>
+
+    <!-- PRICING dropdown -->
+    <li class="nav-pricing-wrap">
+      <a href="#pricing">Pricing</a>
+      <div class="nav-pricing-drop align-right">
+        <div class="nav-drop-plan" onclick="openPayment('Starter','1,499')">
+          <div class="nav-drop-plan-name">Starter</div>
+          <div class="nav-drop-plan-price"><sup>₹</sup>1,499</div>
+          <div class="nav-drop-plan-period">per month</div>
+          <ul class="nav-drop-features">
+            <li>Gym floor access</li>
+            <li>Locker room & showers</li>
+            <li>4 group classes/month</li>
+          </ul>
+          <button class="nav-drop-btn">Get Started</button>
+        </div>
+        <div class="nav-drop-plan pop" onclick="openPayment('Elite','2,999')">
+          <div class="nav-drop-badge">Most Popular</div>
+          <div class="nav-drop-plan-name">Elite</div>
+          <div class="nav-drop-plan-price"><sup>₹</sup>2,999</div>
+          <div class="nav-drop-plan-period">per month</div>
+          <ul class="nav-drop-features">
+            <li>Unlimited gym access</li>
+            <li>Unlimited group classes</li>
+            <li>2 PT sessions/month</li>
+          </ul>
+          <button class="nav-drop-btn">Get Started</button>
+        </div>
+        <div class="nav-drop-plan" onclick="openPayment('Pro','4,999')">
+          <div class="nav-drop-plan-name">Pro</div>
+          <div class="nav-drop-plan-price"><sup>₹</sup>4,999</div>
+          <div class="nav-drop-plan-period">per month</div>
+          <ul class="nav-drop-features">
+            <li>Unlimited gym access</li>
+            <li>4 PT sessions/month</li>
+            <li>Monthly nutrition consult</li>
+          </ul>
+          <button class="nav-drop-btn">Get Started</button>
+        </div>
+      </div>
+    </li>
+
+    <!-- DIET dropdown -->
+    <li class="nav-drop-wrap">
+      <a href="#diet">Diet</a>
+      <div class="nav-mega mega-diet align-right">
+        <div class="mega-title">Nutrition Plans</div>
+        <div class="mega-diet-goals">
+          <a href="#diet" class="mega-diet-row" style="text-decoration:none">
+            <div class="mega-diet-icon">🔥</div>
+            <div class="mega-diet-info">
+              <div class="mega-diet-name">Fat Loss</div>
+              <div class="mega-diet-desc">High protein · Caloric deficit · 6 meals/day</div>
+              <div class="mega-diet-kcal">1,800 kcal/day</div>
+            </div>
+          </a>
+          <a href="#diet" class="mega-diet-row" style="text-decoration:none">
+            <div class="mega-diet-icon">💪</div>
+            <div class="mega-diet-info">
+              <div class="mega-diet-name">Muscle Gain</div>
+              <div class="mega-diet-desc">High carb + protein · Caloric surplus · 6 meals/day</div>
+              <div class="mega-diet-kcal">2,800 kcal/day</div>
+            </div>
+          </a>
+          <a href="#diet" class="mega-diet-row" style="text-decoration:none">
+            <div class="mega-diet-icon">⚡</div>
+            <div class="mega-diet-info">
+              <div class="mega-diet-name">Endurance</div>
+              <div class="mega-diet-desc">Carb-focused · Electrolytes · Glycogen priority</div>
+              <div class="mega-diet-kcal">2,400 kcal/day</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </li>
+
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#register">Register</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#pricing" class="nav-cta">Join Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Bhubaneswar's Premier Training Facility</div>
+    <h1>Build<br><em>Your</em><br>Iron Will</h1>
+    <p class="hero-sub">Elite coaching, world-class equipment, and a community that pushes you past your limits — every single day.</p>
+    <div class="hero-actions">
+      <a href="#schedule" class="btn-primary">View Schedule</a>
+      <a href="#pricing" class="btn-outline">See Plans</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="stat">
+    <div class="stat-num">12+</div>
+    <div class="stat-label">Years Open</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">3,400</div>
+    <div class="stat-label">Active Members</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">48</div>
+    <div class="stat-label">Weekly Classes</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">18</div>
+    <div class="stat-label">Expert Trainers</div>
+  </div>
+</div>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <div class="section-tag">Weekly Schedule</div>
+  <h2>Class <span>Schedule</span></h2>
+  <p class="section-desc">Book your spot in advance. Classes fill fast — especially on weekends. All levels welcome unless marked Advanced.</p>
+
+  <div class="day-tabs" id="dayTabs"></div>
+  <div class="schedule-grid" id="scheduleGrid"></div>
+</section>
+
+<!-- TRAINERS -->
+<section id="trainers">
+  <div class="section-tag">Meet The Team</div>
+  <h2>Expert <span>Trainers</span></h2>
+  <p class="section-desc">Every coach on our floor is certified, experienced, and committed to your progress. Hover a card to see their full profile.</p>
+  <div class="trainers-grid">
+
+    <!-- Rajan Kumar -->
+    <div class="trainer-card" onclick="this.classList.toggle('flipped')">
+      <div class="trainer-flip">
+        <div class="trainer-front">
+          <div class="trainer-img-placeholder"><img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&q=80" alt="Rajan Kumar"></div>
+          <div class="trainer-front-body">
+            <div class="trainer-name">Rajan Kumar</div>
+            <div class="trainer-spec">Strength & Powerlifting</div>
+            <div class="trainer-front-stats">
+              <div class="trainer-front-stat">
+                <div class="trainer-front-stat-num">8+</div>
+                <div class="trainer-front-stat-label">Yrs Exp</div>
+              </div>
+              <div class="trainer-front-stat">
+                <div class="trainer-front-stat-num">340+</div>
+                <div class="trainer-front-stat-label">Clients</div>
+              </div>
+              <div class="trainer-front-stat">
+                <div class="trainer-front-stat-num">4.9★</div>
+                <div class="trainer-front-stat-label">Rating</div>
+              </div>
+            </div>
+          </div>
+          <div class="trainer-hint">↻ Hover to see full profile</div>
+        </div>
+        <div class="trainer-back">
+          <div class="trainer-back-header">
+            <div class="trainer-back-name">Rajan Kumar</div>
+            <div class="trainer-back-spec">Strength & Powerlifting Coach</div>
+          </div>
+          <div class="trainer-back-body">
+            <div class="trainer-bio">National-level powerlifter turned full-time coach. Rajan holds 3 state records in the 83kg class and has been coaching at IronForge since 2018. His programming is built around the basics done brutally well.</div>
+            <div class="trainer-stat-row">
+              <div class="trainer-stat-box">
+                <div class="trainer-stat-box-num">8+</div>
+                <div class="trainer-stat-box-label">Yrs Exp</div>
+              </div>
+              <div class="trainer-stat-box">
+                <div class="trainer-stat-box-num">340+</div>
+                <div class="trainer-stat-box-label">Clients</div>
+              </div>
+              <div class="trainer-stat-box">
+                <div class="trainer-stat-box-num">3</div>
+                <div class="trainer-stat-box-label">State Records</div>
+              </div>
+            </div>
+            <div class="trainer-certs">
+              <div class="trainer-cert">NSCA Certified Strength & Conditioning Specialist</div>
+              <div class="trainer-cert">IPF Powerlifting Coach Level 2</div>
+              <div class="trainer-cert">Sports Nutrition Certificate — ISSA</div>
+            </div>
+            <div class="trainer-tags">
+              <span class="trainer-tag">Powerlifting</span>
+              <span class="trainer-tag">Hypertrophy</span>
+              <span class="trainer-tag">Deadlifts</span>
+              <span class="trainer-tag">Beginner Friendly</span>
+            </div>
+          </div>
+          <div class="trainer-back-footer">
+            <div class="trainer-avail">Available: <strong>Mon–Sat</strong></div>
+            <button class="btn-trainer-book" onclick="event.stopPropagation(); openClassBooking('Personal Training — Strength & Powerlifting','Flexible Slot','Rajan Kumar','60 min')">Book Session</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Priya Venkat -->
+    <div class="trainer-card" onclick="this.classList.toggle('flipped')">
+      <div class="trainer-flip">
+        <div class="trainer-front">
+          <div class="trainer-img-placeholder"><img src="https://images.unsplash.com/photo-1609899537878-88d5ba429bdb?w=500&q=80" alt="Priya Venkat"></div>
+          <div class="trainer-front-body">
+            <div class="trainer-name">Priya Venkat</div>
+            <div class="trainer-spec">HIIT & Functional Fitness</div>
+            <div class="trainer-front-stats">
+              <div class="trainer-front-stat">
+                <div class="trainer-front-stat-num">6+</div>
+                <div class="trainer-front-stat-label">Yrs Exp</div>
+              </div>
+              <div class="trainer-front-stat">
+                <div class="trainer-front-stat-num">280+</div>
+                <div class="trainer-front-stat-label">Clients</div>
+              </div>
+              <div class="trainer-front-stat">
+                <div class="trainer-front-stat-num">4.8★</div>
+                <div class="trainer-front-stat-label">Rating</div>
+              </div>
+            </div>
+          </div>
+          <div class="trainer-hint">↻ Hover to see full profile</div>
+        </div>
+        <div class="trainer-back">
+          <div class="trainer-back-header">
+            <div class="trainer-back-name">Priya Venkat</div>
+            <div class="trainer-back-spec">HIIT & Functional Fitness Coach</div>
+          </div>
+          <div class="trainer-back-body">
+            <div class="trainer-bio">CrossFit Level 2 certified with a background in competitive athletics. Priya is known for classes that feel like a challenge and a party at the same time. She's helped over 280 clients transform their body composition in under 90 days.</div>
+            <div class="trainer-stat-row">
+              <div class="trainer-stat-box">
+                <div class="trainer-stat-box-num">6+</div>
+                <div class="trainer-stat-box-label">Yrs Exp</div>
+              </div>
+              <div class="trainer-stat-box">
+                <div class="trainer-stat-box-num">280+</div>
+                <div class="trainer-stat-box-label">Clients</div>
+              </div>
+              <div class="trainer-stat-box">
+                <div class="trainer-stat-box-num">48</div>
+                <div class="trainer-stat-box-label">Classes/Mo</div>
+              </div>
+            </div>
+            <div class="trainer-certs">
+              <div class="trainer-cert">CrossFit Level 2 Trainer (CF-L2)</div>
+              <div class="trainer-cert">ACSM Certified Personal Trainer</div>
+              <div class="trainer-cert">TRX Suspension Training Specialist</div>
+            </div>
+            <div class="trainer-tags">
+              <span class="trainer-tag">HIIT</span>
+              <span class="trainer-tag">Fat Loss</span>
+              <span class="trainer-tag">Cardio</span>
+              <span class="trainer-tag">Group Classes</span>
+            </div>
+          </div>
+          <div class="trainer-back-footer">
+            <div class="trainer-avail">Available: <strong>Mon–Fri</strong></div>
+            <button class="btn-trainer-book" onclick="event.stopPropagation(); openClassBooking('Personal Training — HIIT & Functional','Flexible Slot','Priya Venkat','45 min')">Book Session</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arjun Sharma -->
+    <div class="trainer-card" onclick="this.classList.toggle('flipped')">
+      <div class="trainer-flip">
+        <div class="trainer-front">
+          <div class="trainer-img-placeholder"><img src="https://images.unsplash.com/photo-1583473848882-f9a5bc7fd2ee?w=500&q=80" alt="Arjun Sharma"></div>
+          <div class="trainer-front-body">
+            <div class="trainer-name">Arjun Sharma</div>
+            <div class="trainer-spec">Boxing & Combat Sports</div>
+            <div class="trainer-front-stats">
+              <div class="trainer-front-stat">
+                <div class="trainer-front-stat-num">10+</div>
+                <div class="trainer-front-stat-label">Yrs Exp</div>
+              </div>
+              <div class="trainer-front-stat">
+                <div class="trainer-front-stat-num">190+</div>
+                <div class="trainer-front-stat-label">Clients</div>
+              </div>
+              <div class="trainer-front-stat">
+                <div class="trainer-front-stat-num">4.9★</div>
+                <div class="trainer-front-stat-label">Rating</div>
+              </div>
+            </div>
+          </div>
+          <div class="trainer-hint">↻ Hover to see full profile</div>
+        </div>
+        <div class="trainer-back">
+          <div class="trainer-back-header">
+            <div class="trainer-back-name">Arjun Sharma</div>
+            <div class="trainer-back-spec">Boxing & Combat Sports Coach</div>
+          </div>
+          <div class="trainer-back-body">
+            <div class="trainer-bio">State-level amateur boxing champion (2016–2019) and former national team reserve. Arjun brings 10 years of ring experience to every session. His classes are equal parts technical and brutal — you will earn your sweat.</div>
+            <div class="trainer-stat-row">
+              <div class="trainer-stat-box">
+                <div class="trainer-stat-box-num">10+</div>
+                <div class="trainer-stat-box-label">Yrs Exp</div>
+              </div>
+              <div class="trainer-stat-box">
+                <div class="trainer-stat-box-num">3x</div>
+                <div class="trainer-stat-box-label">State Champ</div>
+              </div>
+              <div class="trainer-stat-box">
+                <div class="trainer-stat-box-num">190+</div>
+                <div class="trainer-stat-box-label">Clients</div>
+              </div>
+            </div>
+            <div class="trainer-certs">
+              <div class="trainer-cert">BFI (Boxing Federation of India) Certified Coach</div>
+              <div class="trainer-cert">Strength & Conditioning — NSCA</div>
+              <div class="trainer-cert">First Aid & Sports Injury Management</div>
+            </div>
+            <div class="trainer-tags">
+              <span class="trainer-tag">Boxing</span>
+              <span class="trainer-tag">Footwork</span>
+              <span class="trainer-tag">Conditioning</span>
+              <span class="trainer-tag">Self-Defence</span>
+            </div>
+          </div>
+          <div class="trainer-back-footer">
+            <div class="trainer-avail">Available: <strong>Tue–Sun</strong></div>
+            <button class="btn-trainer-book" onclick="event.stopPropagation(); openClassBooking('Personal Training — Boxing','Flexible Slot','Arjun Sharma','60 min')">Book Session</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Meera Nair -->
+    <div class="trainer-card" onclick="this.classList.toggle('flipped')">
+      <div class="trainer-flip">
+        <div class="trainer-front">
+          <div class="trainer-img-placeholder"><img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=500&q=80" alt="Meera Nair"></div>
+          <div class="trainer-front-body">
+            <div class="trainer-name">Meera Nair</div>
+            <div class="trainer-spec">Yoga & Pilates</div>
+            <div class="trainer-front-stats">
+              <div class="trainer-front-stat">
+                <div class="trainer-front-stat-num">7+</div>
+                <div class="trainer-front-stat-label">Yrs Exp</div>
+              </div>
+              <div class="trainer-front-stat">
+                <div class="trainer-front-stat-num">420+</div>
+                <div class="trainer-front-stat-label">Clients</div>
+              </div>
+              <div class="trainer-front-stat">
+                <div class="trainer-front-stat-num">5.0★</div>
+                <div class="trainer-front-stat-label">Rating</div>
+              </div>
+            </div>
+          </div>
+          <div class="trainer-hint">↻ Hover to see full profile</div>
+        </div>
+        <div class="trainer-back">
+          <div class="trainer-back-header">
+            <div class="trainer-back-name">Meera Nair</div>
+            <div class="trainer-back-spec">Yoga & Pilates Instructor</div>
+          </div>
+          <div class="trainer-back-body">
+            <div class="trainer-bio">500-hour RYT with training in Mysore-style Ashtanga and restorative yoga. Meera also holds a Pilates mat and reformer certification. She is the go-to coach for athletes recovering from injuries and members looking for mindful strength.</div>
+            <div class="trainer-stat-row">
+              <div class="trainer-stat-box">
+                <div class="trainer-stat-box-num">7+</div>
+                <div class="trainer-stat-box-label">Yrs Exp</div>
+              </div>
+              <div class="trainer-stat-box">
+                <div class="trainer-stat-box-num">420+</div>
+                <div class="trainer-stat-box-label">Clients</div>
+              </div>
+              <div class="trainer-stat-box">
+                <div class="trainer-stat-box-num">500hr</div>
+                <div class="trainer-stat-box-label">RYT Cert</div>
+              </div>
+            </div>
+            <div class="trainer-certs">
+              <div class="trainer-cert">500-Hour RYT — Yoga Alliance International</div>
+              <div class="trainer-cert">Stott Pilates Mat & Reformer Certified</div>
+              <div class="trainer-cert">Sports Injury Rehab & Corrective Exercise</div>
+            </div>
+            <div class="trainer-tags">
+              <span class="trainer-tag">Yoga</span>
+              <span class="trainer-tag">Pilates</span>
+              <span class="trainer-tag">Mobility</span>
+              <span class="trainer-tag">Rehab</span>
+            </div>
+          </div>
+          <div class="trainer-back-footer">
+            <div class="trainer-avail">Available: <strong>Mon–Sat</strong></div>
+            <button class="btn-trainer-book" onclick="event.stopPropagation(); openClassBooking('Personal Training — Yoga & Pilates','Flexible Slot','Meera Nair','60 min')">Book Session</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-tag">Membership Plans</div>
+  <h2>Simple <span>Pricing</span></h2>
+  <p class="section-desc">No hidden charges. Cancel anytime. Every plan includes full access to the gym floor and locker rooms.</p>
+  <div class="pricing-grid">
+    <div class="plan-card">
+      <div class="plan-name">Starter</div>
+      <div class="plan-price">
+        <div class="plan-price-num"><sup>₹</sup>1,499</div>
+        <div class="plan-price-period">per month</div>
+      </div>
+      <ul class="plan-features">
+        <li>Gym floor access</li>
+        <li>Locker room & showers</li>
+        <li>4 group classes/month</li>
+        <li class="off">Personal training sessions</li>
+        <li class="off">Nutrition consultations</li>
+      </ul>
+      <button class="btn-primary" style="display:block;width:100%;text-align:center" onclick="openPayment('Starter','1,499')">Get Started</button>
+    </div>
+    <div class="plan-card featured">
+      <div class="plan-badge">Most Popular</div>
+      <div class="plan-name">Elite</div>
+      <div class="plan-price">
+        <div class="plan-price-num"><sup>₹</sup>2,999</div>
+        <div class="plan-price-period">per month</div>
+      </div>
+      <ul class="plan-features">
+        <li>Unlimited gym floor access</li>
+        <li>Locker room & showers</li>
+        <li>Unlimited group classes</li>
+        <li>2 PT sessions/month</li>
+        <li class="off">Nutrition consultations</li>
+      </ul>
+      <button class="btn-primary" style="display:block;width:100%;text-align:center" onclick="openPayment('Elite','2,999')">Get Started</button>
+    </div>
+    <div class="plan-card">
+      <div class="plan-name">Pro</div>
+      <div class="plan-price">
+        <div class="plan-price-num"><sup>₹</sup>4,999</div>
+        <div class="plan-price-period">per month</div>
+      </div>
+      <ul class="plan-features">
+        <li>Unlimited gym floor access</li>
+        <li>Locker room & showers</li>
+        <li>Unlimited group classes</li>
+        <li>4 PT sessions/month</li>
+        <li>Monthly nutrition consult</li>
+      </ul>
+      <button class="btn-primary" style="display:block;width:100%;text-align:center" onclick="openPayment('Pro','4,999')">Get Started</button>
+    </div>
+  </div>
+</section>
+
+<!-- DIET PLAN -->
+<section id="diet">
+  <div class="section-tag">Nutrition Guide</div>
+  <h2>Your <span>Diet Plan</span></h2>
+  <p class="section-desc">Fuel your training with the right macros. Select your goal and follow the daily meal plan crafted by our nutrition coaches.</p>
+
+  <div class="diet-goal-tabs" id="goalTabs"></div>
+
+  <div class="diet-layout">
+    <!-- Sidebar: Macros -->
+    <div class="diet-sidebar">
+      <h3>Daily <span style="color:var(--orange)">Macros</span></h3>
+      <div class="macro-ring-wrap">
+        <svg width="140" height="140" viewBox="0 0 140 140" id="macroRing">
+          <circle cx="70" cy="70" r="54" fill="none" stroke="#2c2c2c" stroke-width="14"/>
+          <circle cx="70" cy="70" r="54" fill="none" stroke="#ff5c1a" stroke-width="14"
+            stroke-dasharray="339" stroke-dashoffset="0"
+            stroke-linecap="round" transform="rotate(-90 70 70)" id="ringProtein"/>
+          <circle cx="70" cy="70" r="54" fill="none" stroke="#4fc3f7" stroke-width="14"
+            stroke-dasharray="339" stroke-dashoffset="0"
+            stroke-linecap="round" transform="rotate(-90 70 70)" id="ringCarbs"/>
+          <circle cx="70" cy="70" r="54" fill="none" stroke="#a5d6a7" stroke-width="14"
+            stroke-dasharray="339" stroke-dashoffset="0"
+            stroke-linecap="round" transform="rotate(-90 70 70)" id="ringFat"/>
+          <text x="70" y="65" text-anchor="middle" fill="#f5f5f0" font-family="'Barlow Condensed',sans-serif" font-size="26" font-weight="900" id="ringKcal">2100</text>
+          <text x="70" y="82" text-anchor="middle" fill="#888" font-family="'Inter',sans-serif" font-size="11">kcal/day</text>
+        </svg>
+      </div>
+      <div class="macro-bars" id="macroBars"></div>
+      <div class="macro-note" id="macroNote"></div>
+    </div>
+
+    <!-- Meal Timeline -->
+    <div>
+      <div class="meal-timeline" id="mealTimeline"></div>
+      <div class="diet-rules" id="dietRules"></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-tag">Inside The Forge</div>
+  <h2>Our <span>Gallery</span></h2>
+  <p class="section-desc">Take a look around. Real equipment, real classes, real energy — this is what training at IronForge looks like.</p>
+
+  <div class="gallery-filters" id="galleryFilters">
+    <button class="gallery-filter active" onclick="filterGallery('all', this)">All</button>
+    <button class="gallery-filter" onclick="filterGallery('weights', this)">Weight Room</button>
+    <button class="gallery-filter" onclick="filterGallery('classes', this)">Group Classes</button>
+    <button class="gallery-filter" onclick="filterGallery('cardio', this)">Cardio Zone</button>
+    <button class="gallery-filter" onclick="filterGallery('facility', this)">Facility</button>
+  </div>
+
+  <div class="gallery-grid" id="galleryGrid"></div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightboxOverlay" onclick="handleLightboxOverlay(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+  <div class="lightbox-content">
+    <img id="lightboxImg" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</div>
+
+<!-- REGISTRATION -->
+<section id="register">
+  <div class="section-tag">Join The Forge</div>
+  <h2>Member <span>Registration</span></h2>
+  <p class="section-desc">Fill out the form below to reserve your spot. Our team will call you within 24 hours to schedule your free trial session.</p>
+
+  <div class="register-wrap">
+    <div class="register-side">
+      <h3>Start Your <span>Transformation</span> Today</h3>
+      <p>No commitment required to register. We'll walk you through facilities, trainers, and the right plan for your goals before you pay a single rupee.</p>
+      <div class="register-perks">
+        <div class="register-perk">
+          <div class="register-perk-icon">🎁</div>
+          <div>Free trial session + body composition analysis for all new registrations</div>
+        </div>
+        <div class="register-perk">
+          <div class="register-perk-icon">📞</div>
+          <div>A fitness consultant calls you within 24 hours to finalise your plan</div>
+        </div>
+        <div class="register-perk">
+          <div class="register-perk-icon">🔒</div>
+          <div>Your information is kept private and never shared with third parties</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="register-form-box">
+      <div class="register-form-content" id="regFormContent">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input class="form-input" id="reg-fname" type="text" placeholder="Arjun">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input class="form-input" id="reg-lname" type="text" placeholder="Sharma">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Mobile Number</label>
+            <input class="form-input" id="reg-phone" type="tel" placeholder="+91 98765 43210">
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input class="form-input" id="reg-email" type="email" placeholder="arjun@email.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Your Primary Goal</label>
+          <div class="goal-pills" id="regGoalPills">
+            <button type="button" class="goal-pill active" onclick="selectRegPill(this,'regGoalPills')">Fat Loss</button>
+            <button type="button" class="goal-pill" onclick="selectRegPill(this,'regGoalPills')">Muscle Gain</button>
+            <button type="button" class="goal-pill" onclick="selectRegPill(this,'regGoalPills')">Endurance</button>
+            <button type="button" class="goal-pill" onclick="selectRegPill(this,'regGoalPills')">General Fitness</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Preferred Plan</label>
+          <div class="plan-pills" id="regPlanPills">
+            <button type="button" class="plan-pill" onclick="selectRegPill(this,'regPlanPills')">Starter</button>
+            <button type="button" class="plan-pill active" onclick="selectRegPill(this,'regPlanPills')">Elite</button>
+            <button type="button" class="plan-pill" onclick="selectRegPill(this,'regPlanPills')">Pro</button>
+          </div>
+        </div>
+        <label class="register-checkbox">
+          <input type="checkbox" id="reg-terms">
+          <span>I agree to be contacted by IronForge Gym via call, SMS, or email regarding my registration and membership offers.</span>
+        </label>
+        <button class="btn-register-submit" onclick="submitRegistration()">Register Now — It's Free</button>
+      </div>
+      <div class="register-success" id="regSuccess">
+        <span class="success-icon">✅</span>
+        <div class="success-title">You're Registered!</div>
+        <p class="success-sub">Thanks for joining IronForge. A fitness consultant will call you within 24 hours to confirm your free trial session.</p>
+        <div class="success-ref">Registration ID: <strong id="reg-ref">REG-000000</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-tag">Get In Touch</div>
+  <h2>Contact <span>Us</span></h2>
+  <p class="section-desc">Have a question before joining? Reach out directly or use the AI assistant in the corner for instant answers.</p>
+
+  <div class="contact-wrap">
+    <div>
+      <div class="contact-info-list">
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📍</div>
+          <div class="contact-info-text">
+            <h4>Visit Us</h4>
+            <p><a href="https://www.google.com/maps/search/?api=1&query=Jagamara+Khandagiri+Bhubaneswar+Odisha+near+ITER+college" target="_blank" rel="noopener" class="map-link">Jagamara, Khandagiri,<br>Bhubaneswar, Odisha — near ITER College</a></p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📞</div>
+          <div class="contact-info-text">
+            <h4>Call Us</h4>
+            <p><a href="tel:+914412345678">+91 44 1234 5678</a><br><a href="tel:+919876543210">+91 98765 43210</a></p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">✉️</div>
+          <div class="contact-info-text">
+            <h4>Email Us</h4>
+            <p><a href="mailto:hello@ironforgegym.in">hello@ironforgegym.in</a></p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">🕐</div>
+          <div class="contact-info-text">
+            <h4>Opening Hours</h4>
+            <p>Mon – Sun: 5:00 AM – 11:00 PM</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-social">
+        <a href="#" title="Instagram">📷</a>
+        <a href="#" title="Facebook">📘</a>
+        <a href="#" title="YouTube">▶️</a>
+        <a href="#" title="WhatsApp">💬</a>
+      </div>
+    </div>
+
+    <div class="contact-form-box">
+      <div class="contact-form-content" id="contactFormContent">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input class="form-input" id="con-name" type="text" placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label>Email or Phone</label>
+          <input class="form-input" id="con-contact" type="text" placeholder="Email or mobile number">
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <select class="form-input" id="con-subject">
+            <option>General Enquiry</option>
+            <option>Membership Plans</option>
+            <option>Personal Training</option>
+            <option>Corporate / Group Booking</option>
+            <option>Feedback / Complaint</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea class="form-input" id="con-message" rows="4" placeholder="How can we help?" style="resize:vertical;font-family:inherit"></textarea>
+        </div>
+        <button class="btn-register-submit" onclick="submitContact()">Send Message</button>
+      </div>
+      <div class="contact-success" id="contactSuccess">
+        <span class="success-icon">📨</span>
+        <div class="success-title">Message Sent!</div>
+        <p class="success-sub">Our team typically replies within a few hours during gym hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo">IRON<span>FORGE</span></div>
+      <p>Jagamara, Khandagiri,<br>Bhubaneswar, Odisha — near ITER College<br>Open 5 AM – 11 PM, 7 days</p>
+    </div>
+    <div class="footer-col">
+      <h4>Train</h4>
+      <ul>
+        <li><a href="#schedule">Group Classes</a></li>
+        <li><a href="#trainers">Personal Training</a></li>
+        <li><a href="#" onclick="openInfoModal('open-gym');return false;">Open Gym</a></li>
+        <li><a href="#" onclick="openInfoModal('online-coaching');return false;">Online Coaching</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="#" onclick="openInfoModal('our-story');return false;">Our Story</a></li>
+        <li><a href="#trainers">Trainers</a></li>
+        <li><a href="#gallery">Facilities</a></li>
+        <li><a href="#" onclick="openInfoModal('blog');return false;">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Help</h4>
+      <ul>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" onclick="openInfoModal('faqs');return false;">FAQs</a></li>
+        <li><a href="#" onclick="openInfoModal('booking-policy');return false;">Booking Policy</a></li>
+        <li><a href="#" onclick="openInfoModal('privacy');return false;">Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 IronForge Gym. All rights reserved.</span>
+    <span>Built with iron & code.</span>
+  </div>
+</footer>
+<!-- PAYMENT MODAL -->
+<div class="modal-overlay" id="paymentModal" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modalBox">
+    <div class="modal-header">
+      <div class="modal-title-group">
+        <div class="modal-plan-name" id="modalPlanName">Elite Plan</div>
+        <div class="modal-plan-price" id="modalPlanPrice">₹2,999 / month</div>
+      </div>
+      <button class="modal-close" onclick="closePayment()">✕</button>
+    </div>
+    <div class="modal-body">
+
+      <!-- Step indicator -->
+      <div class="modal-steps">
+        <div class="modal-step active" id="step-ind-1">
+          <div class="step-num" id="step-num-1">1</div>
+          <span>Details</span>
+        </div>
+        <div class="step-line" id="step-line-1"></div>
+        <div class="modal-step" id="step-ind-2">
+          <div class="step-num" id="step-num-2">2</div>
+          <span>Payment</span>
+        </div>
+        <div class="step-line" id="step-line-2"></div>
+        <div class="modal-step" id="step-ind-3">
+          <div class="step-num" id="step-num-3">3</div>
+          <span>Confirm</span>
+        </div>
+      </div>
+
+      <!-- Step 1: Personal Details -->
+      <div id="step1">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input class="form-input" id="inp-fname" type="text" placeholder="Arjun">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input class="form-input" id="inp-lname" type="text" placeholder="Sharma">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input class="form-input" id="inp-email" type="email" placeholder="arjun@email.com">
+        </div>
+        <div class="form-group">
+          <label>Mobile Number</label>
+          <input class="form-input" id="inp-phone" type="tel" placeholder="+91 98765 43210" maxlength="14">
+        </div>
+        <div class="form-group">
+          <label>Date of Birth</label>
+          <input class="form-input" id="inp-dob" type="date">
+        </div>
+        <div class="modal-footer">
+          <button class="btn-modal-next" onclick="goStep(2)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Payment Method -->
+      <div id="step2" style="display:none">
+        <div class="pay-methods">
+          <div class="pay-method active" id="pm-card" onclick="selectMethod('card')">
+            <span class="pay-method-icon">💳</span>
+            <div class="pay-method-label">Card</div>
+          </div>
+          <div class="pay-method" id="pm-upi" onclick="selectMethod('upi')">
+            <span class="pay-method-icon">📱</span>
+            <div class="pay-method-label">UPI</div>
+          </div>
+          <div class="pay-method" id="pm-netbanking" onclick="selectMethod('netbanking')">
+            <span class="pay-method-icon">🏦</span>
+            <div class="pay-method-label">Net Banking</div>
+          </div>
+        </div>
+
+        <!-- Card Fields -->
+        <div id="card-fields">
+          <div class="card-icons">
+            <span class="card-icon">VISA</span>
+            <span class="card-icon">MC</span>
+            <span class="card-icon">RUPAY</span>
+            <span class="card-icon">AMEX</span>
+          </div>
+          <div class="form-group">
+            <label>Card Number</label>
+            <input class="form-input" id="inp-cardnum" type="text" placeholder="1234  5678  9012  3456" maxlength="19">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Expiry (MM/YY)</label>
+              <input class="form-input" id="inp-expiry" type="text" placeholder="08/28" maxlength="5">
+            </div>
+            <div class="form-group">
+              <label>CVV</label>
+              <input class="form-input" id="inp-cvv" type="password" placeholder="•••" maxlength="4">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Name on Card</label>
+            <input class="form-input" id="inp-cardname" type="text" placeholder="ARJUN SHARMA">
+          </div>
+        </div>
+
+        <!-- UPI Fields -->
+        <div id="upi-fields" style="display:none">
+          <div class="form-group">
+            <label>UPI ID</label>
+            <div class="upi-input-wrap">
+              <input class="form-input" id="inp-upi" type="text" placeholder="yourname@upi">
+              <button class="upi-verify" onclick="verifyUPI()">Verify</button>
+            </div>
+          </div>
+          <p style="font-size:12px;color:var(--muted);margin-top:8px">Enter your UPI ID (e.g. name@okicici, name@ybl) and click Verify to proceed.</p>
+        </div>
+
+        <!-- Net Banking Fields -->
+        <div id="nb-fields" style="display:none">
+          <div class="form-group">
+            <label>Select Your Bank</label>
+            <select class="form-input" id="inp-bank">
+              <option value="">— Choose Bank —</option>
+              <option>State Bank of India</option>
+              <option>HDFC Bank</option>
+              <option>ICICI Bank</option>
+              <option>Axis Bank</option>
+              <option>Kotak Mahindra Bank</option>
+              <option>Bank of Baroda</option>
+              <option>Punjab National Bank</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <p style="font-size:12px;color:var(--muted);margin-top:8px">You will be redirected to your bank's secure login page to complete the payment.</p>
+        </div>
+
+        <div class="modal-footer" style="margin-top:20px">
+          <button class="btn-modal-back" onclick="goStep(1)">← Back</button>
+          <button class="btn-modal-next" onclick="goStep(3)">Review Order →</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Confirm & Pay -->
+      <div id="step3" style="display:none">
+        <div class="order-summary">
+          <div class="order-row"><span>Plan</span><span id="sum-plan">—</span></div>
+          <div class="order-row"><span>Member</span><span id="sum-name">—</span></div>
+          <div class="order-row"><span>Billing Cycle</span><span>Monthly</span></div>
+          <div class="order-row"><span>GST (18%)</span><span id="sum-gst">—</span></div>
+          <div class="order-row total"><span>Total Due</span><span id="sum-total">—</span></div>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:20px;line-height:1.6">
+          By clicking <strong style="color:var(--white)">Pay Now</strong> you agree to IronForge's
+          <a href="#" style="color:var(--orange);text-decoration:none">Terms of Membership</a> and authorise
+          monthly recurring billing. Cancel anytime from your account.
+        </p>
+        <div class="modal-footer">
+          <button class="btn-modal-back" onclick="goStep(2)">← Back</button>
+          <button class="btn-modal-next" id="payBtn" onclick="processPayment()">🔒 Pay Now</button>
+        </div>
+      </div>
+
+      <!-- Step 4: Success -->
+      <div id="step4" style="display:none">
+        <div class="payment-success">
+          <span class="success-icon">🎉</span>
+          <div class="success-title">Welcome to IronForge!</div>
+          <p class="success-sub">Your membership is active. Check your email for your welcome kit, access card details, and first-month schedule.</p>
+          <div class="success-ref">
+            Booking Reference: <strong id="ref-code">IF-000000</strong>
+          </div>
+          <button class="btn-primary" style="width:100%;margin-top:8px" onclick="closePayment()">Done</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- CLASS BOOKING MODAL -->
+<div class="modal-overlay" id="classModal" onclick="handleClassOverlay(event)">
+  <div class="modal" id="classModalBox" style="max-width:460px">
+    <div class="modal-header">
+      <div class="modal-title-group">
+        <div class="modal-plan-name" id="cb-classname">Morning HIIT</div>
+        <div class="modal-plan-price" id="cb-classmeta">—</div>
+      </div>
+      <button class="modal-close" onclick="closeClassModal()">✕</button>
+    </div>
+    <div class="modal-body">
+
+      <div id="cb-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input class="form-input" id="cb-fname" type="text" placeholder="Arjun">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input class="form-input" id="cb-lname" type="text" placeholder="Sharma">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Mobile Number</label>
+          <input class="form-input" id="cb-phone" type="tel" placeholder="+91 98765 43210">
+        </div>
+        <div class="form-group">
+          <label>Email (optional)</label>
+          <input class="form-input" id="cb-email" type="email" placeholder="arjun@email.com">
+        </div>
+        <div class="form-group">
+          <label>Experience Level</label>
+          <select class="form-input" id="cb-level">
+            <option value="">— Select —</option>
+            <option>Beginner (0–6 months)</option>
+            <option>Intermediate (6 months–2 yrs)</option>
+            <option>Advanced (2+ years)</option>
+          </select>
+        </div>
+
+        <div class="order-summary" style="margin-bottom:16px">
+          <div class="order-row"><span>Class</span><span id="cb-sum-class">—</span></div>
+          <div class="order-row"><span>Time</span><span id="cb-sum-time">—</span></div>
+          <div class="order-row"><span>Trainer</span><span id="cb-sum-trainer">—</span></div>
+          <div class="order-row"><span>Duration</span><span id="cb-sum-dur">—</span></div>
+          <div class="order-row total"><span>Fee</span><span style="color:#a5d6a7">FREE with membership</span></div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn-modal-next" onclick="confirmClassBooking()">✅ Confirm Booking</button>
+        </div>
+      </div>
+
+      <div id="cb-success" style="display:none">
+        <div class="payment-success">
+          <span class="success-icon">🏋️</span>
+          <div class="success-title">You're In!</div>
+          <p class="success-sub">Your spot is reserved. Show this reference at the front desk or check your SMS for confirmation.</p>
+          <div class="success-ref">Booking Ref: <strong id="cb-ref">CLS-000000</strong></div>
+          <button class="btn-primary" style="width:100%;margin-top:8px" onclick="closeClassModal()">Done</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- INFO MODAL (footer links) -->
+<div class="info-modal-overlay" id="infoModalOverlay" onclick="if(event.target===this) closeInfoModal()">
+  <div class="info-modal">
+    <div class="info-modal-title" id="infoModalTitle"></div>
+    <div class="info-modal-body" id="infoModalBody"></div>
+    <button class="info-modal-close" onclick="closeInfoModal()">Close</button>
+  </div>
+</div>
+
+<!-- AI ASK WIDGET -->
+<button class="ai-fab" id="aiFab" onclick="toggleAiChat()">
+  <span class="ai-fab-pulse"></span>
+  <span style="position:relative;z-index:1">💬</span>
+  <span class="ai-fab-badge" id="aiFabBadge">1</span>
+</button>
+
+<div class="ai-chat-panel" id="aiChatPanel">
+  <div class="ai-chat-header">
+    <div class="ai-chat-header-left">
+      <div class="ai-chat-avatar">🏋️</div>
+      <div>
+        <div class="ai-chat-title">Forge Assistant</div>
+        <div class="ai-chat-status">Online now</div>
+      </div>
+    </div>
+    <button class="ai-chat-close" onclick="toggleAiChat()">✕</button>
+  </div>
+
+  <div class="ai-chat-messages" id="aiMessages">
+    <div class="ai-msg bot">
+      <div class="ai-msg-avatar">🏋️</div>
+      <div class="ai-msg-bubble">Hey there! 👋 I'm the IronForge assistant. Ask me about class timings, pricing, trainers, or anything else about the gym.</div>
+    </div>
+  </div>
+
+  <div class="ai-quick-qs">
+    <button class="ai-quick-q" onclick="askQuick('What are your gym timings?')">Gym timings?</button>
+    <button class="ai-quick-q" onclick="askQuick('How much is the membership?')">Pricing?</button>
+    <button class="ai-quick-q" onclick="askQuick('Do you have a free trial?')">Free trial?</button>
+  </div>
+
+  <div class="ai-chat-input-row">
+    <input class="ai-chat-input" id="aiInput" type="text" placeholder="Type your question…" onkeydown="if(event.key==='Enter') sendAiMessage()">
+    <button class="ai-chat-send" onclick="sendAiMessage()">➤</button>
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
